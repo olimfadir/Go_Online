@@ -1,0 +1,77 @@
+Go Coding Rules:
+
+from http://www.cs.cmu.edu/~wjh/go/rules/Japanese.html
+
+1. Players choose a color (black/white) and place stones alternatively starting with black
+
+2. Stone are placed on empty intersections on the board (look@googs)
+	>OG board is 19x19, but can play on 9x9 or 13x13
+	>cannot be placed on an empty space that gives zero liberties (explained below)
+		>considered ILLEGAL MOVE
+		>UNLESS the move captures stones (look @ "Ko" below for example)
+			>so UNLESS the stone gains liberties from the move
+
+3. A placed stone has four "liberties" (un-attached adjacent side)
+	>Liberties are to the top, bottom, left, and right of stone (N/W/S/E)
+	>A stone loses liberties when enemy stone is "attached" to it
+	>A stone can gain liberties by connecting friendly stones
+		>e.g. Two friendly stones have a total of 6 liberties
+
+		+ + + + + +
+		+ + o o + +
+		+ o O O o +
+		+ + o o + +
+		+ + + + + +
+
+		>above, Big O are stones, little o are liberties, + are empty intersections
+
+	>stones that have 0 liberties are captured and removed from play
+		>this is called a capture, captured stones are removed and put in captured pile
+		>so a stone or group of stones surrounded on all (N/W/S/E) sides is removed
+
+	>a lone stone on the board's corners has only two liberties
+		>e.g. NW corner stone will have liberties only to East and South
+
+	>a lone stone on the border of the board has 3 liberties
+		>Say stone on left-hand border, liberties to North, South, and East
+
+4. "Ko" is a particular shape where both players can continously capture the the space
+
+	> B = black stones, W = white stones, + = empty intersection
+
+	+ + + + + +
+	+ + B W + +
+	+ B + B W +
+	+ + B W + +
+	+ + + + + +
+
+	>In above, White can capture B's rightmost stone by placing a stone in empty space 		surrounded by B
+	> B can then recapture and it goes on and on
+	>Go rules state both players must make a non-ko move before the Ko can be played again
+		>so both players playing in any other spot will allow Ko plays for next turn
+
+5. Territory
+
+	>Empty intersections surrounded by same-side teams (or the board walls) are territory
+	>In the Ko example, the + between the B stones counts as one territory
+
+6. Game Ends when both players pass or one player resigns
+	>points are then rewarded and player w/most points wins
+
+7. Point counting (Japanese Rules)
+	>Remove opposing stones in each player's territory and add to captured pile
+		>UNLESS the enemy stone is protecting its own territory
+	>Stones that you've captured then fill up the enemy's territory
+		>So, points = (your territory) - (stones captured by enemy)
+
+
+
+
+ 
+
+
+
+
+
+
+
