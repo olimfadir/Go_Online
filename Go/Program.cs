@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 
 namespace Go
 {
@@ -10,7 +11,7 @@ namespace Go
             var p2 = new Player();
 
             var board = new GameBoard();
-            board.GetCurrentState();
+            board.InitialState();
             Console.WriteLine($"Hello World! {p1.ReturnMessage()}");
         }
     }
